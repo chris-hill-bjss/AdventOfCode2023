@@ -8,7 +8,7 @@ const solveDay: number = parseInt(
     new Date().getDate().toString()
 );
 
-match(solveDay)
-  .with(1, () => DayOne())
-  .with(2, () => DayTwo())
+await match(solveDay)
+  .with(1, async () => await DayOne())
+  .with(2, async () => await DayTwo())
   .otherwise((day) => console.log(`No solution for day ${day}`));

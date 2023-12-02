@@ -1,5 +1,5 @@
 import { match } from "ts-pattern";
-import { tryGetInput as tryGet, writeCache as write } from "../cache/cache.js";
+import { tryGet, write } from "../cache/cache.js";
 import config from "../config.json" assert { type: "json" };
 
 export const getInput = async (day: number): Promise<string> => {

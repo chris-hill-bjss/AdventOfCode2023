@@ -5,16 +5,19 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
 
     /* Modules */
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "./dist",
     "rootDir": "./src",
 
-    // /* Type Checking */
+    /* Type Checking */
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+
+    /* Debugging */
+    "sourceMap": true
   },
   //   "include": ["**/src/*.ts"],
   "exclude": ["node_modules"]

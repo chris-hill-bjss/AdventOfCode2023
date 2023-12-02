@@ -8,7 +8,7 @@ export type CacheHit = {
 export type CacheMiss = { type: "miss" };
 export type CacheResponse = CacheHit | CacheMiss;
 
-export const tryGetInput = (day: number): CacheResponse => {
+export const tryGet = (day: number): CacheResponse => {
   const inputFilePath = `${config.CacheDir}/${day}.txt`;
 
   return fs.existsSync(inputFilePath)
@@ -16,7 +16,7 @@ export const tryGetInput = (day: number): CacheResponse => {
     : ({} as CacheMiss);
 };
 
-export const writeCache = (day: number, input: string): string => {
+export const write = (day: number, input: string): string => {
   const inputFilePath = `${config.CacheDir}/${day}.txt`;
 
   if (!fs.existsSync(config.CacheDir)) {

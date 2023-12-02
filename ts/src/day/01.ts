@@ -1,4 +1,5 @@
-import { getInput } from "../http/input.js";
+import { getInput } from "../lib/http.js";
+import { isEmpty } from "../lib/string.js";
 
 const partOneTestInput = `1abc2
 pqr3stu8vwx
@@ -28,7 +29,6 @@ const wordToDigit = new Map<string, string>([
 const forwardRegex: string = Array.from(wordToDigit.keys()).join("|");
 const reverseRegex: string = [...forwardRegex].reverse().join("");
 
-const isEmpty = (s: string): boolean => s.trim() !== "";
 const isDigit = (c: string): boolean => c >= "0" && c <= "9";
 
 export const DayOne = async () => {

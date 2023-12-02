@@ -1,6 +1,6 @@
 import { match } from "ts-pattern";
-import { tryGet, write } from "../cache/cache.js";
 import config from "../config.json" assert { type: "json" };
+import { tryGet, write } from "./cache.js";
 
 export const getInput = async (day: number): Promise<string> => {
   const cacheResponse = tryGet(day);

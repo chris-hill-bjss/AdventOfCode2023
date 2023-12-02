@@ -1,5 +1,5 @@
 import { getInput } from "../lib/http.js";
-import { isEmpty } from "../lib/string.js";
+import { isNotEmpty } from "../lib/string.js";
 
 const partOneTestInput = `1abc2
 pqr3stu8vwx
@@ -43,7 +43,7 @@ export const DayOne = async () => {
 const SolvePartOne = (input: string): number =>
   input
     .split("\n")
-    .filter(isEmpty)
+    .filter(isNotEmpty)
     .map((line) => {
       const firstDigit = [...line].find(isDigit);
       const lastDigit = [...line].reverse().find(isDigit);
@@ -55,7 +55,7 @@ const SolvePartOne = (input: string): number =>
 const SolvePartTwo = (input: string): number =>
   input
     .split("\n")
-    .filter(isEmpty)
+    .filter(isNotEmpty)
     .map((line) => {
       const forwardParse = line.replace(
         new RegExp(`(${forwardRegex})`),

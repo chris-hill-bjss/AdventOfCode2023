@@ -3,6 +3,7 @@ import { match } from "ts-pattern";
 import { DayOne } from "./day/01.js";
 import { DayTwo } from "./day/02.js";
 import { DayThree } from "./day/03.js";
+import { DayFour } from "./day/04.js";
 
 const solveDay: number = parseInt(
   process.argv.find((arg) => arg.startsWith("--day"))?.split("=")[1] ??
@@ -13,4 +14,5 @@ await match(solveDay)
   .with(1, async () => await DayOne())
   .with(2, async () => await DayTwo())
   .with(3, async () => await DayThree())
+  .with(4, async () => await DayFour())
   .otherwise((day) => console.log(`No solution for day ${day}`));

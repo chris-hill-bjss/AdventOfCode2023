@@ -18,13 +18,6 @@ export const DayFour = async () => {
 const numbersToDigits = (input: string[]): number[] =>
   input.filter(isNotEmpty).map((s) => parseInt(s.trim()));
 
-const calculateScore = (numberOfMatches: number): number => {
-  const bitArray = Array.from(Array(numberOfMatches), () => 0);
-  bitArray[0] = 1;
-
-  return parseInt(bitArray.join(""), 2);
-};
-
 const SolvePartOne = (input: string): number =>
   input
     .split("\n")
@@ -37,7 +30,7 @@ const SolvePartOne = (input: string): number =>
 
       const matches = revealedNumbers.filter((n) => winningNumbers.includes(n));
 
-      return matches.length > 0 ? calculateScore(matches.length) : 0;
+      return matches.length > 0 ? Math.pow(2, matches.length - 1) : 0;
     })
     .reduce((total, n) => total + n);
 
